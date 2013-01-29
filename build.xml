@@ -5,7 +5,7 @@
     <sf:deploy username="${prod.username}"
                password="${prod.password}"
                serverurl="${prod.serverurl}"
-               deployRoot="${prod}"
+               deployRoot="${prod.deployRoot}"
                maxPoll="1000"
                pollWaitMillis="10000"/>
   </target>
