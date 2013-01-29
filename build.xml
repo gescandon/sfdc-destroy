@@ -1,15 +1,17 @@
-<project name="salesforce" default="production" basedir="." xmlns:sf="antlib:com.salesforce">
+<project name="salesforce" default="destroyFull" basedir="." xmlns:sf="antlib:com.salesforce">
 
+  <property file="build.properties"/>
   <target name="destroyProd">
     <sf:deploy username="${prod.username}"
                password="${prod.password}"
                serverurl="${prod.serverurl}"
-               deployRoot="${gforce.deployRoot}"
+               deployRoot="${prod}"
                maxPoll="1000"
                pollWaitMillis="10000"/>
   </target>
 
   <target name="destroyFull">
+    <echo message="deployRoot: ${full.deployRoot}"/>
     <sf:deploy username="${full.username}"
                password="${full.password}"
                serverurl="${full.serverurl}"
@@ -19,3 +21,4 @@
   </target>
   
 </project>
+
